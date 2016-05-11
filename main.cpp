@@ -21,6 +21,9 @@ void Mouse(int button, int state, int x, int y)
 		case GLUT_LEFT_BUTTON:
 			game.Open(x / 16, y / 16);
 			break;
+		case GLUT_RIGHT_BUTTON:
+			game.Mark(x / 16, y / 16);
+			break;
 		}
 		glutPostRedisplay();
 	}
@@ -32,7 +35,7 @@ int main(int argc, char **argv)
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(Game::FieldWidth * Painter::CellSize, Game::FieldHeight * Painter::CellSize);
 	glutInitWindowPosition(Game::FieldWidth * Painter::CellSize, Game::FieldHeight * Painter::CellSize);
-	glutCreateWindow("Ñàïžð");
+	glutCreateWindow("Сапёр");
 	glClearColor(0, 0, 0, 1);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
