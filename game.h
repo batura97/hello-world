@@ -10,7 +10,11 @@ public:
 	struct Cell
 	{
 		State state;
+		bool HasMine;
+		int MinesAround;
 	};
 	Cell Field[FieldWidth][FieldHeight];
-
+	void Open(int x, int y);
+	void Mark(int x, int y);
+	void OpenEmptyCells(int x, int y);
 };
